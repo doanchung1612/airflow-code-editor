@@ -24,7 +24,7 @@ from airflow_code_editor.commons import (
     MENU_CATEGORY,
     MENU_LABEL
 )
-
+from flask import request
 __all__ = [
     'AdminCodeEditorView',
     'admin_view'
@@ -44,6 +44,23 @@ class AdminCodeEditorView(BaseView, AbstractCodeEditorView):
     @login_required
     @provide_session
     def index(self, session=None):
+        return self._index(session)
+
+    @expose('/create', methods=['POST'])
+    @login_required
+    @provide_session
+    def create_file(self, session=None):
+        # file_name = request.args.get('file_name', None)
+        file_name = request.form.get('file_name', None)
+        self._create_file(session, file_name)
+        return self._index(session)
+
+    @expose('/delete', methods=['POST'])
+    @login_required
+    @provide_session
+    def create_file(self, session=None):
+        file_name = request.form.get('file_name', None)
+        self._delete_file(file_name)
         return self._index(session)
 
     @expose('/editor', methods=['GET', 'POST'])

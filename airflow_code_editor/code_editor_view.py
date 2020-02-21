@@ -26,7 +26,7 @@ from airflow_code_editor.utils import (
     normalize_path,
     execute_git_command
 )
-
+import shutil
 __all__ = [
     'AbstractCodeEditorView'
 ]
@@ -70,6 +70,42 @@ class AbstractCodeEditorView(object):
                   'error')
         finally:
             return code
+
+    def _create_file(self, session, fname):
+        try:
+            import logging
+            logging.error("_create_file")
+            cwd = configuration.get('core', 'dags_folder')
+            fullpath = os.path.join(cwd, fname + ".py")
+            with open(fullpath, 'w') as f:
+                f.write("from airflow.models import DAG")
+            flash('File [{path}] created '.format(file_name=fname), 'success')
+
+        except Exception as ex:
+            logging.error(ex)
+            logging.exception(ex)
+            flash('Error can not create file [{path}]'.format(file_name=fname),
+                  'error')
+
+    def _delete_file(self, fname): #move into dags_tmp_folder
+        try:
+            # Move a file from the directory d1 to d2
+            cwd = configuration.get('core', 'dags_folder')
+            cwdDesti = configuration.get('core', 'dags_tmp_folder')
+            filePathDesti = os.path.join(cwdDesti)
+            logging.error("destination" +filePathDesti)
+            filePath = os.path.join(cwd, fname)
+            if os.path.exists(filePath):
+                shutil.move(filePath, filePathDesti)
+                # shutil.copy(filePath, filePathDesti)
+
+            else:
+                flash("Can not delete the file as it doesn't exists")
+        except Exception as ex:
+            logging.error(ex)
+            logging.exception(ex)
+            flash('Error can not delete file [{file_name}]'.format(file_name=fname),
+                  'error')
 
     def _editor(self, session=None, path=None):
         path = normalize_path(path)

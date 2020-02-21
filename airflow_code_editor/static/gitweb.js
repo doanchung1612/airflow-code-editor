@@ -21,42 +21,42 @@ var webui = webui || {};
 webui.repo = "dags";
 
 webui.COLORS = ["#ffab1d", "#fd8c25", "#f36e4a", "#fc6148", "#d75ab6", "#b25ade", "#6575ff", "#7b77e9", "#4ea8ec", "#00d0f5", "#4eb94e", "#51af23", "#8b9f1c", "#d0b02f", "#d0853a", "#a4a4a4",
-                "#ffc51f", "#fe982c", "#fd7854", "#ff705f", "#e467c3", "#bd65e9", "#7183ff", "#8985f7", "#55b6ff", "#10dcff", "#51cd51", "#5cba2e", "#9eb22f", "#debe3d", "#e19344", "#b8b8b8",
-                "#ffd03b", "#ffae38", "#ff8a6a", "#ff7e7e", "#ef72ce", "#c56df1", "#8091ff", "#918dff", "#69caff", "#3ee1ff", "#72da72", "#71cf43", "#abbf3c", "#e6c645", "#eda04e", "#c5c5c5",
-                "#ffd84c", "#ffb946", "#ff987c", "#ff8f8f", "#fb7eda", "#ce76fa", "#90a0ff", "#9c98ff", "#74cbff", "#64e7ff", "#7ce47c", "#85e357", "#b8cc49", "#edcd4c", "#f9ad58", "#d0d0d0",
-                "#ffe651", "#ffbf51", "#ffa48b", "#ff9d9e", "#ff8de1", "#d583ff", "#97a9ff", "#a7a4ff", "#82d3ff", "#76eaff", "#85ed85", "#8deb5f", "#c2d653", "#f5d862", "#fcb75c", "#d7d7d7",
-                "#fff456", "#ffc66d", "#ffb39e", "#ffabad", "#ff9de5", "#da90ff", "#9fb2ff", "#b2afff", "#8ddaff", "#8bedff", "#99f299", "#97f569", "#cde153", "#fbe276", "#ffc160", "#e1e1e1",
-                "#fff970", "#ffd587", "#ffc2b2", "#ffb9bd", "#ffa5e7", "#de9cff", "#afbeff", "#bbb8ff", "#9fd4ff", "#9aefff", "#b3f7b3", "#a0fe72", "#dbef6c", "#fcee98", "#ffca69", "#eaeaea",
-                "#763700", "#9f241e", "#982c0e", "#a81300", "#80035f", "#650d90", "#082fca", "#3531a3", "#1d4892", "#006f84", "#036b03", "#236600", "#445200", "#544509", "#702408", "#343434",
-                "#9a5000", "#b33a20", "#b02f0f", "#c8210a", "#950f74", "#7b23a7", "#263dd4", "#4642b4", "#1d5cac", "#00849c", "#0e760e", "#287800", "#495600", "#6c5809", "#8d3a13", "#4e4e4e",
-                "#c36806", "#c85120", "#bf3624", "#df2512", "#aa2288", "#933bbf", "#444cde", "#5753c5", "#1d71c6", "#0099bf", "#188018", "#2e8c00", "#607100", "#907609", "#ab511f", "#686868",
-                "#e47b07", "#e36920", "#d34e2a", "#ec3b24", "#ba3d99", "#9d45c9", "#4f5aec", "#615dcf", "#3286cf", "#00abca", "#279227", "#3a980c", "#6c7f00", "#ab8b0a", "#b56427", "#757575",
-                "#ff911a", "#fc8120", "#e7623e", "#fa5236", "#ca4da9", "#a74fd3", "#5a68ff", "#6d69db", "#489bd9", "#00bcde", "#36a436", "#47a519", "#798d0a", "#c1a120", "#bf7730", "#8e8e8e"]
+    "#ffc51f", "#fe982c", "#fd7854", "#ff705f", "#e467c3", "#bd65e9", "#7183ff", "#8985f7", "#55b6ff", "#10dcff", "#51cd51", "#5cba2e", "#9eb22f", "#debe3d", "#e19344", "#b8b8b8",
+    "#ffd03b", "#ffae38", "#ff8a6a", "#ff7e7e", "#ef72ce", "#c56df1", "#8091ff", "#918dff", "#69caff", "#3ee1ff", "#72da72", "#71cf43", "#abbf3c", "#e6c645", "#eda04e", "#c5c5c5",
+    "#ffd84c", "#ffb946", "#ff987c", "#ff8f8f", "#fb7eda", "#ce76fa", "#90a0ff", "#9c98ff", "#74cbff", "#64e7ff", "#7ce47c", "#85e357", "#b8cc49", "#edcd4c", "#f9ad58", "#d0d0d0",
+    "#ffe651", "#ffbf51", "#ffa48b", "#ff9d9e", "#ff8de1", "#d583ff", "#97a9ff", "#a7a4ff", "#82d3ff", "#76eaff", "#85ed85", "#8deb5f", "#c2d653", "#f5d862", "#fcb75c", "#d7d7d7",
+    "#fff456", "#ffc66d", "#ffb39e", "#ffabad", "#ff9de5", "#da90ff", "#9fb2ff", "#b2afff", "#8ddaff", "#8bedff", "#99f299", "#97f569", "#cde153", "#fbe276", "#ffc160", "#e1e1e1",
+    "#fff970", "#ffd587", "#ffc2b2", "#ffb9bd", "#ffa5e7", "#de9cff", "#afbeff", "#bbb8ff", "#9fd4ff", "#9aefff", "#b3f7b3", "#a0fe72", "#dbef6c", "#fcee98", "#ffca69", "#eaeaea",
+    "#763700", "#9f241e", "#982c0e", "#a81300", "#80035f", "#650d90", "#082fca", "#3531a3", "#1d4892", "#006f84", "#036b03", "#236600", "#445200", "#544509", "#702408", "#343434",
+    "#9a5000", "#b33a20", "#b02f0f", "#c8210a", "#950f74", "#7b23a7", "#263dd4", "#4642b4", "#1d5cac", "#00849c", "#0e760e", "#287800", "#495600", "#6c5809", "#8d3a13", "#4e4e4e",
+    "#c36806", "#c85120", "#bf3624", "#df2512", "#aa2288", "#933bbf", "#444cde", "#5753c5", "#1d71c6", "#0099bf", "#188018", "#2e8c00", "#607100", "#907609", "#ab511f", "#686868",
+    "#e47b07", "#e36920", "#d34e2a", "#ec3b24", "#ba3d99", "#9d45c9", "#4f5aec", "#615dcf", "#3286cf", "#00abca", "#279227", "#3a980c", "#6c7f00", "#ab8b0a", "#b56427", "#757575",
+    "#ff911a", "#fc8120", "#e7623e", "#fa5236", "#ca4da9", "#a74fd3", "#5a68ff", "#6d69db", "#489bd9", "#00bcde", "#36a436", "#47a519", "#798d0a", "#c1a120", "#bf7730", "#8e8e8e"]
 
 
-webui.showError = function(message) {
+webui.showError = function (message) {
     jQuery("#error-modal .alert").text(message);
     jQuery("#error-modal").modal('show');
 }
 
-webui.showWarning = function(message) {
+webui.showWarning = function (message) {
     var messageBox = jQuery("#message-box");
     messageBox.empty();
-    jQuery(  '<div class="alert alert-warning alert-dismissible" role="alert">' +
-            '<button type="button" class="close" data-dismiss="alert">' +
-                '<span aria-hidden="true">&times;</span>' +
-                '<span class="sr-only">Close</span>' +
-            '</button>' +
-            message +
+    jQuery('<div class="alert alert-warning alert-dismissible" role="alert">' +
+        '<button type="button" class="close" data-dismiss="alert">' +
+        '<span aria-hidden="true">&times;</span>' +
+        '<span class="sr-only">Close</span>' +
+        '</button>' +
+        message +
         '</div>').appendTo(messageBox);
 }
 
-webui.git = function(args, callback) {
+webui.git = function (args, callback) {
     jQuery.ajax({
         type: 'POST',
         url: 'repo',
-        data: { args: args },
-        success: function(data, textStatus, request) {
+        data: {args: args},
+        success: function (data, textStatus, request) {
             var messageStartIndex = data.length - parseInt(request.getResponseHeader('X-Git-Stderr-Length'));
             var rcode = parseInt(request.getResponseHeader('X-Git-Return-Code'));
             var output = data.substring(0, messageStartIndex);
@@ -80,17 +80,19 @@ webui.git = function(args, callback) {
     });
 };
 
-webui.detachChildren = function(element) {
+webui.detachChildren = function (element) {
     while (element.firstChild) {
         element.removeChild(element.firstChild);
     }
 }
 
-webui.splitLines = function(data) {
-    return data.split("\n").filter(function(s) { return s.length > 0; });
+webui.splitLines = function (data) {
+    return data.split("\n").filter(function (s) {
+        return s.length > 0;
+    });
 };
 
-webui.getNodeIndex = function(element) {
+webui.getNodeIndex = function (element) {
     var index = 0;
     while (element.previousElementSibling) {
         element = element.previousElementSibling;
@@ -99,19 +101,19 @@ webui.getNodeIndex = function(element) {
     return index;
 }
 
-webui.TabBox = function(buttons) {
+webui.TabBox = function (buttons) {
 
     var self = this;
 
-    self.itemClicked = function(event) {
+    self.itemClicked = function (event) {
         self.updateSelection(event.target.parentElement);
     }
 
-    self.select = function(index) {
+    self.select = function (index) {
         self.updateSelection(self.element.children[index]);
     }
 
-    self.updateSelection = function(elt) {
+    self.updateSelection = function (elt) {
         jQuery(".active", self.element).removeClass("active");
         jQuery(elt).addClass("active");
         elt.callback();
@@ -131,11 +133,11 @@ webui.TabBox = function(buttons) {
 /*
  * == SideBarView =============================================================
  */
-webui.SideBarView = function(mainView) {
+webui.SideBarView = function (mainView) {
 
     var self = this;
 
-    self.selectRef = function(refName) {
+    self.selectRef = function (refName) {
         var selected = jQuery(".active", self.element);
         if (selected.length > 0) {
             if (selected[0].refName != refName) {
@@ -161,21 +163,21 @@ webui.SideBarView = function(mainView) {
         self.mainView.historyView.update(refName);
     };
 
-    self.addPopup = function(section, title, id, refs) {
-        var popup = jQuery(  '<div class="modal fade" id="' + id + '" role="dialog">' +
-                            '<div class="modal-dialog modal-sm">' +
-                                '<div class="modal-content">' +
-                                    '<div class="modal-header">' +
-                                        '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' +
-                                        '<h4 class="modal-title">' + title + '</h4>' +
-                                    '</div>' +
-                                    '<div class="modal-body"><div class="list-group"></div></div>' +
-                                '</div>' +
-                            '</div>' +
-                        '</div>')[0];
+    self.addPopup = function (section, title, id, refs) {
+        var popup = jQuery('<div class="modal fade" id="' + id + '" role="dialog">' +
+            '<div class="modal-dialog modal-sm">' +
+            '<div class="modal-content">' +
+            '<div class="modal-header">' +
+            '<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>' +
+            '<h4 class="modal-title">' + title + '</h4>' +
+            '</div>' +
+            '<div class="modal-body"><div class="list-group"></div></div>' +
+            '</div>' +
+            '</div>' +
+            '</div>')[0];
         self.element.appendChild(popup);
         var popupContent = jQuery(".list-group", popup)[0];
-        refs.forEach(function(ref) {
+        refs.forEach(function (ref) {
             var link = jQuery('<a class="list-group-item sidebar-ref">')[0];
             link.section = section;
             if (id == "local-branches-popup") {
@@ -196,11 +198,11 @@ webui.SideBarView = function(mainView) {
         return popup;
     };
 
-    self.fetchSection = function(section, title, id, gitCommand) {
-        webui.git(gitCommand, function(data) {
+    self.fetchSection = function (section, title, id, gitCommand) {
+        webui.git(gitCommand, function (data) {
             var refs = webui.splitLines(data);
             if (id == "remote-branches") {
-                refs = refs.map(function(ref) {
+                refs = refs.map(function (ref) {
                     var end = ref.lastIndexOf(" -> ");
                     if (end == -1) {
                         return ref.substr(2);
@@ -211,7 +213,7 @@ webui.SideBarView = function(mainView) {
             }
             if (refs.length > 0) {
                 var ul = jQuery("<ul>").appendTo(section)[0];
-                refs = refs.sort(function(a, b) {
+                refs = refs.sort(function (a, b) {
                     if (id != "local-branches") {
                         return -a.localeCompare(b);
                     } else if (a[0] == "*") {
@@ -254,7 +256,7 @@ webui.SideBarView = function(mainView) {
                 if (refs.length > maxRefsCount) {
                     var li = jQuery('<li class="sidebar-more">More ...</li>').appendTo(ul);
                     var popup = self.addPopup(section, title, id + "-popup", refs);
-                    li.click(function() {
+                    li.click(function () {
                         jQuery(popup).modal();
                     });
                 }
@@ -266,30 +268,30 @@ webui.SideBarView = function(mainView) {
 
     self.mainView = mainView;
     self.element = jQuery('<div id="sidebar">' +
-                            '<div id="sidebar-content">' +
-                                '<section id="sidebar-files">' +
-                                '<h4><i class="fa fa-home"></i> Files</h4>' +
-                                '</section>' +
-                                '<section id="sidebar-workspace">' +
-                                '<h4><i class="fa fa-briefcase"></i>Git Workspace</h4>' +
-                                '</section>' +
-                                '<section id="sidebar-local-branches">' +
-                                '<h4><i class="fa fa-code-fork"></i> Local Branches</h4>' +
-                                '</section>' +
-                                '<section id="sidebar-remote-branches">' +
-                                '<h4><i class="fa fa-globe"></i>Remote Branches</h4>' +
-                                '</section>' +
-                                '<section id="sidebar-tags">' +
-                                '<h4><i class="fa fa-tags"></i>Tags</h4>' +
-                                '</section>' +
-                            '</div>' +
-                        '</div>')[0];
+        '<div id="sidebar-content">' +
+        '<section id="sidebar-files">' +
+        '<h4><i class="fa fa-home"></i> Files</h4>' +
+        '</section>' +
+        '<section id="sidebar-workspace">' +
+        '<h4><i class="fa fa-briefcase"></i>Git Workspace</h4>' +
+        '</section>' +
+        '<section id="sidebar-local-branches">' +
+        '<h4><i class="fa fa-code-fork"></i> Local Branches</h4>' +
+        '</section>' +
+        '<section id="sidebar-remote-branches">' +
+        '<h4><i class="fa fa-globe"></i>Remote Branches</h4>' +
+        '</section>' +
+        '<section id="sidebar-tags">' +
+        '<h4><i class="fa fa-tags"></i>Tags</h4>' +
+        '</section>' +
+        '</div>' +
+        '</div>')[0];
 
     var workspaceElement = jQuery("#sidebar-workspace h4", self.element);
     workspaceElement.click(function (event) {
         jQuery("*", self.element).removeClass("active");
         workspaceElement.addClass("active");
-        self.mainView.workspaceView.update([ "stage" ]);
+        self.mainView.workspaceView.update(["stage"]);
     });
 
     var filesElement = jQuery("#sidebar-files h4", self.element);
@@ -299,19 +301,19 @@ webui.SideBarView = function(mainView) {
         self.mainView.filesView.update();
     });
 
-    self.fetchSection(jQuery("#sidebar-local-branches", self.element)[0], "Local Branches", "local-branches", [ "branch" ]);
-    self.fetchSection(jQuery("#sidebar-remote-branches", self.element)[0], "Remote Branches", "remote-branches", [ "branch", "--remotes" ]);
-    self.fetchSection(jQuery("#sidebar-tags", self.element)[0], "Tags", "tags", [ "tag" ]);
+    self.fetchSection(jQuery("#sidebar-local-branches", self.element)[0], "Local Branches", "local-branches", ["branch"]);
+    self.fetchSection(jQuery("#sidebar-remote-branches", self.element)[0], "Remote Branches", "remote-branches", ["branch", "--remotes"]);
+    self.fetchSection(jQuery("#sidebar-tags", self.element)[0], "Tags", "tags", ["tag"]);
 };
 
 /*
  * == LogView =================================================================
  */
-webui.LogView = function(historyView) {
+webui.LogView = function (historyView) {
 
     var self = this;
 
-    self.update = function(ref) {
+    self.update = function (ref) {
         jQuery(svg).empty();
         streams = []
         jQuery(content).empty();
@@ -319,14 +321,14 @@ webui.LogView = function(historyView) {
         self.populate();
     };
 
-    self.populate = function() {
+    self.populate = function () {
         var maxCount = 1000;
         if (content.childElementCount > 0) {
             // The last node is the 'Show more commits placeholder'. Remove it.
             content.removeChild(content.lastElementChild);
         }
         var startAt = content.childElementCount;
-        webui.git([ "log", "--date-order", "--pretty=raw", "--decorate=full", "--max-count=" + String(maxCount + 1), String(self.nextRef), "--" ], function(data) {
+        webui.git(["log", "--date-order", "--pretty=raw", "--decorate=full", "--max-count=" + String(maxCount + 1), String(self.nextRef), "--"], function (data) {
             var start = 0;
             var count = 0;
             self.nextRef = undefined;
@@ -370,7 +372,7 @@ webui.LogView = function(historyView) {
         });
     };
 
-    self.updateGraph = function(startAt) {
+    self.updateGraph = function (startAt) {
         // Draw the graph
         var currentY = (startAt + 0.5) * self.lineHeight;
         var maxLeft = 0;
@@ -487,11 +489,11 @@ webui.LogView = function(historyView) {
     function Entry(logView, data) {
         var self = this;
 
-        self.abbrevCommitHash = function() {
+        self.abbrevCommitHash = function () {
             return self.commit.substr(0, 7);
         };
 
-        self.abbrevMessage = function() {
+        self.abbrevMessage = function () {
             var end = self.message.indexOf("\n");
             if (end == -1) {
                 return self.message
@@ -500,15 +502,15 @@ webui.LogView = function(historyView) {
             }
         };
 
-        self.createElement = function() {
+        self.createElement = function () {
             self.element = jQuery('<a class="log-entry list-group-item">' +
-                                '<header>' +
-                                    '<h6></h6>' +
-                                    '<span class="log-entry-date">' + self.author.date.toLocaleString() + '&nbsp;</span> ' +
-                                    '<span class="badge">' + self.abbrevCommitHash() + '</span>' +
-                                '</header>' +
-                                '<p class="list-group-item-text"></p>' +
-                             '</a>')[0];
+                '<header>' +
+                '<h6></h6>' +
+                '<span class="log-entry-date">' + self.author.date.toLocaleString() + '&nbsp;</span> ' +
+                '<span class="badge">' + self.abbrevCommitHash() + '</span>' +
+                '</header>' +
+                '<p class="list-group-item-text"></p>' +
+                '</a>')[0];
             jQuery('<span>' + self.author.name + ' &lt;' + self.author.email + '&gt;</span>').appendTo(jQuery("h6", self.element));
             jQuery(".list-group-item-text", self.element)[0].appendChild(document.createTextNode(self.abbrevMessage()));
             if (self.refs) {
@@ -537,7 +539,7 @@ webui.LogView = function(historyView) {
             return self.element;
         };
 
-        self.select = function() {
+        self.select = function () {
             if (currentSelection != self) {
                 if (currentSelection) {
                     jQuery(currentSelection.element).removeClass("active");
@@ -551,14 +553,14 @@ webui.LogView = function(historyView) {
         self.parents = [];
         self.message = ""
 
-        data.split("\n").forEach(function(line) {
+        data.split("\n").forEach(function (line) {
             if (line.indexOf("commit ") == 0) {
                 self.commit = line.substr(7, 40);
                 if (line.length > 47) {
                     self.refs = []
                     var s = line.lastIndexOf("(") + 1;
                     var e = line.lastIndexOf(")");
-                    line.substr(s, e - s).split(", ").forEach(function(ref) {
+                    line.substr(s, e - s).split(", ").forEach(function (ref) {
                         self.refs.push(ref);
                     });
                 }
@@ -593,11 +595,11 @@ webui.LogView = function(historyView) {
 /*
  * == DiffView ================================================================
  */
-webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
+webui.DiffView = function (sideBySide, hunkSelectionAllowed, parent) {
 
     var self = this;
 
-    self.update = function(cmd, diffOpts, file, mode) {
+    self.update = function (cmd, diffOpts, file, mode) {
         gitApplyType = mode;
         jQuery(".diff-stage", self.element).attr("style", "display:none");
         jQuery(".diff-cancel", self.element).attr("style", "display:none");
@@ -635,7 +637,7 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
                 fullCmd.push("--");
                 fullCmd.push(self.gitFile);
             }
-            webui.git(fullCmd, function(diff) {
+            webui.git(fullCmd, function (diff) {
                 self.refresh(diff);
             });
         } else {
@@ -643,7 +645,7 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         }
     };
 
-    self.refresh = function(diff) {
+    self.refresh = function (diff) {
         self.currentDiff = diff;
         self.diffHeader = "";
         jQuery("span", self.element).text('Context: ' + self.context);
@@ -656,10 +658,10 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         }
     }
 
-    self.updateSimpleView = function(view, diff) {
+    self.updateSimpleView = function (view, diff) {
         jQuery(view).empty();
 
-        var context = { inHeader: true };
+        var context = {inHeader: true};
         var diffLines = diff.split("\n");
         for (var i = 0; i < diffLines.length; ++i) {
             var line = diffLines[i];
@@ -667,13 +669,14 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         }
     }
 
-    self.updateSplitView = function(view, diffLines, operation) {
+    self.updateSplitView = function (view, diffLines, operation) {
         jQuery(view).empty();
 
-        var context = { inHeader: true,
-                        addedLines: [],
-                        removedLines: [],
-                      };
+        var context = {
+            inHeader: true,
+            addedLines: [],
+            removedLines: [],
+        };
         for (var i = 0; i < diffLines.length; ++i) {
             var line = diffLines[i];
             var c = line[0];
@@ -701,7 +704,7 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         view.parentElement.scrollTop = view.parentElement.webuiPrevScrollTop;
     }
 
-    self.flushAddedRemovedLines = function(view, operation, context) {
+    self.flushAddedRemovedLines = function (view, operation, context) {
         if (operation == '+') {
             var lines = context.addedLines;
             var offset = context.removedLines.length - context.addedLines.length;
@@ -709,7 +712,7 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
             var lines = context.removedLines;
             var offset = context.addedLines.length - context.removedLines.length;
         }
-        lines.forEach(function(line) {
+        lines.forEach(function (line) {
             context = self.addDiffLine(view, line, context);
         });
         if (offset > 0) {
@@ -721,7 +724,7 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         return context;
     }
 
-    self.addDiffLine = function(view, line, context) {
+    self.addDiffLine = function (view, line, context) {
         var c = line[0];
         var pre = jQuery('<pre class="diff-view-line">').appendTo(view)[0];
         pre.appendChild(document.createTextNode(line));
@@ -815,14 +818,18 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         return patch;
     }
 
-    self.flushSelectionPatch = function(hunkAddedLines, hunkRemovedLines, refLineNo, patchOffset) {
-        var patch = "@@ -" + refLineNo + "," + hunkRemovedLines.length +" +" + (refLineNo + patchOffset) + "," + hunkAddedLines.length + " @@\n";
-        hunkRemovedLines.forEach(function (line) { patch += line + "\n" });
-        hunkAddedLines.forEach(function (line) { patch += line + "\n" });
+    self.flushSelectionPatch = function (hunkAddedLines, hunkRemovedLines, refLineNo, patchOffset) {
+        var patch = "@@ -" + refLineNo + "," + hunkRemovedLines.length + " +" + (refLineNo + patchOffset) + "," + hunkAddedLines.length + " @@\n";
+        hunkRemovedLines.forEach(function (line) {
+            patch += line + "\n"
+        });
+        hunkAddedLines.forEach(function (line) {
+            patch += line + "\n"
+        });
         return patch;
     }
 
-    self.reverseLine = function(line) {
+    self.reverseLine = function (line) {
         switch (line[0]) {
             case '-':
                 return '+' + line.substr(1);
@@ -835,7 +842,7 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         }
     }
 
-    self.diffViewScrolled = function(event) {
+    self.diffViewScrolled = function (event) {
         if (event.target == left) {
             var current = left;
             var other = right;
@@ -854,29 +861,29 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         }
     }
 
-    self.addContext = function() {
+    self.addContext = function () {
         self.context += 3;
         self.update();
     }
 
-    self.removeContext = function() {
+    self.removeContext = function () {
         if (self.context > 3) {
             self.context -= 3;
             self.update();
         }
     }
 
-    self.allContext = function() {
+    self.allContext = function () {
         self.complete = !self.complete;
         self.update();
     }
 
-    self.toggleIgnoreWhitespace = function() {
+    self.toggleIgnoreWhitespace = function () {
         self.ignoreWhitespace = !self.ignoreWhitespace;
         self.update();
     }
 
-    self.handleClick = function(event) {
+    self.handleClick = function (event) {
         var lineElt = event.target;
         while (lineElt && !jQuery(lineElt).hasClass("diff-view-line")) {
             lineElt = lineElt.parentElement;
@@ -929,9 +936,9 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         }
     }
 
-    self.applySelection = function(reverse, cached) {
+    self.applySelection = function (reverse, cached) {
         var patch = self.createSelectionPatch(reverse);
-        var cmd = [ "apply", "--unidiff-zero" ];
+        var cmd = ["apply", "--unidiff-zero"];
         if (cached) {
             cmd.push("--cached");
         }
@@ -940,8 +947,8 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
         });
     }
 
-    self.switchToExploreView = function() {
-        if (! self.currentDiff) {
+    self.switchToExploreView = function () {
+        if (!self.currentDiff) {
             return;
         }
         var mainView = parent.historyView.mainView;
@@ -950,22 +957,22 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
     };
 
     var html = '<div class="diff-view-container panel panel-default">';
-    if (! (parent instanceof webui.CommitExplorerView)) {
+    if (!(parent instanceof webui.CommitExplorerView)) {
         html +=
             '<div class="panel-heading btn-toolbar" role="toolbar">' +
-                '<button type="button" class="btn btn-sm btn-default diff-ignore-whitespace" data-toggle="button">Ignore Whitespace</button>' +
-                '<button type="button" class="btn btn-sm btn-default diff-context-all" data-toggle="button">Complete file</button>' +
-                '<div class="btn-group btn-group-sm">' +
-                    '<span></span>&nbsp;' +
-                    '<button type="button" class="btn btn-default diff-context-remove">-</button>' +
-                    '<button type="button" class="btn btn-default diff-context-add">+</button>' +
-                '</div>' +
-                '<div class="btn-group btn-group-sm diff-selection-buttons">' +
-                    '<button type="button" class="btn btn-default diff-stage" style="display:none">Stage</button>' +
-                    '<button type="button" class="btn btn-default diff-cancel" style="display:none">Cancel</button>' +
-                    '<button type="button" class="btn btn-default diff-unstage" style="display:none">Unstage</button>' +
-                '</div>' +
-                (sideBySide ? '' : '<button type="button"  class="btn btn-sm btn-default diff-explore">Explore</button>') +
+            '<button type="button" class="btn btn-sm btn-default diff-ignore-whitespace" data-toggle="button">Ignore Whitespace</button>' +
+            '<button type="button" class="btn btn-sm btn-default diff-context-all" data-toggle="button">Complete file</button>' +
+            '<div class="btn-group btn-group-sm">' +
+            '<span></span>&nbsp;' +
+            '<button type="button" class="btn btn-default diff-context-remove">-</button>' +
+            '<button type="button" class="btn btn-default diff-context-add">+</button>' +
+            '</div>' +
+            '<div class="btn-group btn-group-sm diff-selection-buttons">' +
+            '<button type="button" class="btn btn-default diff-stage" style="display:none">Stage</button>' +
+            '<button type="button" class="btn btn-default diff-cancel" style="display:none">Cancel</button>' +
+            '<button type="button" class="btn btn-default diff-unstage" style="display:none">Unstage</button>' +
+            '</div>' +
+            (sideBySide ? '' : '<button type="button"  class="btn btn-sm btn-default diff-explore">Explore</button>') +
             '</div>';
     }
     html += '<div class="panel-body"></div></div>'
@@ -999,11 +1006,19 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
     jQuery(".diff-context-all", self.element).click(self.allContext);
     jQuery(".diff-ignore-whitespace", self.element).click(self.toggleIgnoreWhitespace);
 
-    jQuery(".diff-stage", self.element).click(function() { self.applySelection(false, true); });
-    jQuery(".diff-cancel", self.element).click(function() { self.applySelection(true, false); });
-    jQuery(".diff-unstage", self.element).click(function() { self.applySelection(true, true); });
+    jQuery(".diff-stage", self.element).click(function () {
+        self.applySelection(false, true);
+    });
+    jQuery(".diff-cancel", self.element).click(function () {
+        self.applySelection(true, false);
+    });
+    jQuery(".diff-unstage", self.element).click(function () {
+        self.applySelection(true, true);
+    });
 
-    jQuery(".diff-explore", self.element).click(function() { self.switchToExploreView(); });
+    jQuery(".diff-explore", self.element).click(function () {
+        self.switchToExploreView();
+    });
 
     self.context = 3;
     self.complete = false;
@@ -1014,7 +1029,7 @@ webui.DiffView = function(sideBySide, hunkSelectionAllowed, parent) {
 /*
  * == TreeView ================================================================
  */
-webui.TreeView = function(commitView) {
+webui.TreeView = function (commitView) {
 
     var self = this;
 
@@ -1022,7 +1037,7 @@ webui.TreeView = function(commitView) {
 
         var self = this;
 
-        self.formatedSize = function(size) {
+        self.formatedSize = function (size) {
             if (isNaN(self.size)) {
                 return ["", ""]
             }
@@ -1037,7 +1052,7 @@ webui.TreeView = function(commitView) {
             }
         };
 
-        self.isSymbolicLink = function() {
+        self.isSymbolicLink = function () {
             return (self.mode & 120000) == 120000; // S_IFLNK
         }
 
@@ -1056,12 +1071,12 @@ webui.TreeView = function(commitView) {
         self.name = line.substr(start);
     }
 
-    self.update = function(treeRef) {
-        self.stack = [ { name: webui.repo, object: treeRef } ];
+    self.update = function (treeRef) {
+        self.stack = [{name: webui.repo, object: treeRef}];
         self.showTree();
     }
 
-    self.createBreadcrumb = function() {
+    self.createBreadcrumb = function () {
         jQuery(breadcrumb).empty();
         for (var i = 0; i < self.stack.length; ++i) {
             var last = i == self.stack.length - 1;
@@ -1079,13 +1094,13 @@ webui.TreeView = function(commitView) {
         }
     }
 
-    self.breadcrumbClicked = function(event) {
+    self.breadcrumbClicked = function (event) {
         var to = webui.getNodeIndex(event.target.parentElement);
         self.stack = self.stack.slice(0, to + 1);
         self.showTree();
     }
 
-    self.showTree = function() {
+    self.showTree = function () {
         jQuery(self.element.lastElementChild).remove();
         var treeViewTreeContent = jQuery('<div id="tree-view-tree-content" class="list-group">')[0];
         self.element.appendChild(treeViewTreeContent);
@@ -1093,30 +1108,34 @@ webui.TreeView = function(commitView) {
         var treeRef = self.stack[self.stack.length - 1].object;
         var parentTreeRef = self.stack.length > 1 ? self.stack[self.stack.length - 2].object : undefined;
         var cmd = (treeRef === undefined || treeRef.startsWith('/')) ? 'ls-local' : 'ls-tree';
-        webui.git([ cmd, "-l", treeRef ], function(data) {
+        webui.git([cmd, "-l", treeRef], function (data) {
             var blobs = [];
             var trees = [];
-            if (parentTreeRef || (treeRef !== undefined && treeRef.startsWith('/')) ) {
-                var elt =   jQuery('<a href="#" class="list-group-item">' +
-                                '<span class="tree-item-tree">..</span> ' +
-                                '<span></span> ' +
-                                '<span></span> ' +
-                            '</a>');
-                elt.click(function() {
+            if (parentTreeRef || (treeRef !== undefined && treeRef.startsWith('/'))) {
+                var elt = jQuery('<a href="#" class="list-group-item">' +
+                    '<span class="tree-item-tree">..</span> ' +
+                    '<span></span> ' +
+                    '<span></span> ' +
+                    '</a>');
+                elt.click(function () {
                     self.stack.pop();
                     self.showTree();
                 });
                 elt.appendTo(treeViewTreeContent);
             }
-            webui.splitLines(data).forEach(function(line) {
+            webui.splitLines(data).forEach(function (line) {
                 var entry = new Entry(line);
                 console.log(entry)
+                var btn = jQuery('<button filename="' + entry.name + '"class="btn btn-default  pull-right remove-item button-delete col-md-1" ' +
+                    ' data-toggle="modal" data-target="#modalDelete">DELETE <span class="glyphicon glyphicon-remove"></span></button>')[0];
                 var size = entry.formatedSize()
-                var elt =   jQuery('<a href="#" class="list-group-item">' +
-                                '<span>' + entry.name + '</span> ' +
-                                '<span>' + size[0] + '</span>&nbsp;' +
-                                '<span>' + size[1] + '</span>' +
-                            '</a>')[0];
+                var elt = jQuery(
+                    '<div class="row-fluid row align-items-start">' +
+                    '<a href="#" class="list-group-item col-md-11">' +
+                    '<span>' + entry.name + '</span> ' +
+                    '<span>' + size[0] + '</span>&nbsp;' +
+                    '<span>' + size[1] + '</span>' +
+                    '</a>' + '</div>')[0];
                 elt.model = entry;
                 var nameElt = jQuery("span", elt)[0];
                 jQuery(nameElt).addClass("tree-item-" + entry.type);
@@ -1125,19 +1144,30 @@ webui.TreeView = function(commitView) {
                 }
                 if (entry.type == "tree") {
                     trees.push(elt);
-                    jQuery(elt).click(function() {
-                        self.stack.push({ name: elt.model.name, object: elt.model.object});
+                    jQuery(elt).click(function () {
+                        self.stack.push({name: elt.model.name, object: elt.model.object});
                         self.showTree();
                     });
                 } else {
                     blobs.push(elt);
-                    jQuery(elt).click(function() {
-                        self.stack.push({ name: elt.model.name, object: elt.model.object});
+                    jQuery(elt).click(function () {
+                        self.stack.push({name: elt.model.name, object: elt.model.object});
                         self.showBlob();
                     });
                 }
+                jQuery(btn).appendTo(elt);
+                jQuery(btn).click(function (event) {
+                    event.stopPropagation();
+
+                    const fileName = jQuery(this).attr("filename");
+                    console.log("event clicked");
+                    console.log(fileName);
+
+                    jQuery("#modalDeleteDagInput").val(fileName);
+                    jQuery("#modalDelete").modal('show');
+                });
             });
-            var compare = function(a, b) {
+            var compare = function (a, b) {
                 return a.model.name.toLowerCase().localeCompare(b.model.name.toLowerCase());
             }
             blobs.sort(compare);
@@ -1151,14 +1181,14 @@ webui.TreeView = function(commitView) {
         });
     }
 
-    self.showBlob = function(blobRef) {
+    self.showBlob = function (blobRef) {
         self.createBreadcrumb();
         jQuery(self.element.lastElementChild).remove();
         var object = self.stack[self.stack.length - 1].object;
         if (object[0] == '/') {
             jQuery('<div id="tree-view-blob-content">' +
-                   '<iframe src="/code_editor/editor' + object + '"></iframe>' +
-                   '</div>').appendTo(self.element);
+                '<iframe src="/code_editor/editor' + object + '"></iframe>' +
+                '</div>').appendTo(self.element);
         } else {
             // jQuery('<div id="tree-view-blob-content">' +
             //        '<iframe src="/code_editor/repo/' + object + '"></iframe>' +
@@ -1177,7 +1207,7 @@ webui.TreeView = function(commitView) {
             });
             var client = new XMLHttpRequest();
             client.open('GET', '/code_editor/repo/' + object);
-            client.onreadystatechange = function() {
+            client.onreadystatechange = function () {
                 editor.setValue(client.responseText);
                 editor.refresh();
             }
@@ -1195,7 +1225,7 @@ webui.TreeView = function(commitView) {
 /*
  * == CommitExplorerView =============================================================
  */
-webui.CommitExplorerView = function(mainView, diff) {
+webui.CommitExplorerView = function (mainView, diff) {
 
     var self = this;
     var diffLines = diff.split("\n");
@@ -1203,55 +1233,55 @@ webui.CommitExplorerView = function(mainView, diff) {
     var diffSections = [];
     var currentSection, line, c, lineMatch;
 
-    self.buildDiffSections = function(diff) {
+    self.buildDiffSections = function (diff) {
         var visitorState = 'header';
 
         for (var i = 0; i < diffLines.length; i++) {
             line = diffLines[i];
             c = line[0];
 
-            switch(visitorState) {
-            case 'header':
-                if (c == 'd') {
-                    visitorState = 'sectionHeader';
-                    i -= 1;
-                } else {
-                    diffHeaderLines.push(line)
-                }
-                break;
-            case 'sectionHeader':
-                lineMatch = line.match(/^diff --git a\/(.*) b\/(.*)jQuery/)
-                currentSection = {
-                    leftName: lineMatch[1],
-                    rightName: lineMatch[2],
-                    lines: []
-                };
-                diffSections.push(currentSection);
-                visitorState = 'sectionContent';
-                break;
-            case 'sectionContent':
-                if (c == 'd') {
-                    visitorState = 'sectionHeader';
-                    i -= 1;
-                } else {
-                    currentSection.lines.push(line);
-                }
+            switch (visitorState) {
+                case 'header':
+                    if (c == 'd') {
+                        visitorState = 'sectionHeader';
+                        i -= 1;
+                    } else {
+                        diffHeaderLines.push(line)
+                    }
+                    break;
+                case 'sectionHeader':
+                    lineMatch = line.match(/^diff --git a\/(.*) b\/(.*)jQuery/)
+                    currentSection = {
+                        leftName: lineMatch[1],
+                        rightName: lineMatch[2],
+                        lines: []
+                    };
+                    diffSections.push(currentSection);
+                    visitorState = 'sectionContent';
+                    break;
+                case 'sectionContent':
+                    if (c == 'd') {
+                        visitorState = 'sectionHeader';
+                        i -= 1;
+                    } else {
+                        currentSection.lines.push(line);
+                    }
             }
         }
     }
 
-    self.show = function() {
+    self.show = function () {
         mainView.switchTo(self.element);
     };
 
-    self.displayDiffForSection = function(idx) {
+    self.displayDiffForSection = function (idx) {
         self.diffView.refresh(diffSections[idx].lines.join("\n"));
     };
 
-    self.element = jQuery(    '<div id="commit-explorer-view">'+
-                             '<div id="commit-explorer-diff-view"></div>'+
-                             '<div id="commit-explorer-navigator-view"></div>'+
-                         '</div>')[0];
+    self.element = jQuery('<div id="commit-explorer-view">' +
+        '<div id="commit-explorer-diff-view"></div>' +
+        '<div id="commit-explorer-navigator-view"></div>' +
+        '</div>')[0];
 
     var commitExplorerDiffView = jQuery('#commit-explorer-diff-view', self.element)[0];
     var commitExplorerNavigatorView = jQuery('#commit-explorer-navigator-view', self.element)[0];
@@ -1270,10 +1300,10 @@ webui.CommitExplorerView = function(mainView, diff) {
 
 }
 
-webui.FileListView = function(commitExplorerView, files){
+webui.FileListView = function (commitExplorerView, files) {
     var self = this;
 
-    self.fileSelected = function(event) {
+    self.fileSelected = function (event) {
         var index = 0;
         var sibling = event.target.previousElementSibling;
         while (sibling) {
@@ -1287,13 +1317,13 @@ webui.FileListView = function(commitExplorerView, files){
         commitExplorerView.displayDiffForSection(index);
     };
 
-    self.buildLine = function(label, parent) {
+    self.buildLine = function (label, parent) {
         var element = jQuery('<a class="list-group-item">' + label + '</a>')[0];
         jQuery(element).click(self.fileSelected)
         parent.appendChild(element);
     }
 
-    self.viewScrolled = function(event) {
+    self.viewScrolled = function (event) {
         if (event.target == rightScrollView) {
             var current = rightScrollView;
             var other = leftScrollView;
@@ -1304,24 +1334,24 @@ webui.FileListView = function(commitExplorerView, files){
         other.scrollTop = current.scrollTop;
     }
 
-    self.element = jQuery(   '<div class="file-list-view panel panel-default">' +
-                            '<div class="panel-heading">' +
-                                '<h5> Files </h5>' +
-                            '</div>' +
-                            '<div class="file-list-container">' +
-                                '<div class="file-list-left-container">' +
-                                    '<div class="list-group"></div>' +
-                                '</div>' +
-                                '<div class="file-list-right-container">' +
-                                    '<div class="list-group"></div>' +
-                                '</div>' +
-                            '</div>' +
-                         '</div>')[0];
+    self.element = jQuery('<div class="file-list-view panel panel-default">' +
+        '<div class="panel-heading">' +
+        '<h5> Files </h5>' +
+        '</div>' +
+        '<div class="file-list-container">' +
+        '<div class="file-list-left-container">' +
+        '<div class="list-group"></div>' +
+        '</div>' +
+        '<div class="file-list-right-container">' +
+        '<div class="list-group"></div>' +
+        '</div>' +
+        '</div>' +
+        '</div>')[0];
 
     var rightScrollView = jQuery(".file-list-right-container", self.element)[0];
-    var rightContainer =  jQuery(".list-group", rightScrollView)[0];
+    var rightContainer = jQuery(".list-group", rightScrollView)[0];
     var leftScrollView = jQuery(".file-list-left-container", self.element)[0];
-    var leftContainer =  jQuery(".list-group", leftScrollView)[0];
+    var leftContainer = jQuery(".list-group", leftScrollView)[0];
 
     for (var i = 0; i < files.length; ++i) {
         var lineData = files[i];
@@ -1335,24 +1365,24 @@ webui.FileListView = function(commitExplorerView, files){
 /*
  * == CommitHeaderView ==============================================================
  */
-webui.CommitHeaderView = function(commitExplorerView, header) {
+webui.CommitHeaderView = function (commitExplorerView, header) {
     var self = this;
     self.element = jQuery('<div class="panel panel-default">' +
-                         '<div class="panel-heading">' +
-                             '<h5> Commit Details </h5>' +
-                         '</div>' +
-                         '<div class="panel-body">' + header.split("\n").join("<br>") + '</div>' +
-                     '</div>')[0];
+        '<div class="panel-heading">' +
+        '<h5> Commit Details </h5>' +
+        '</div>' +
+        '<div class="panel-body">' + header.split("\n").join("<br>") + '</div>' +
+        '</div>')[0];
 }
 
 /*
  * == CommitView ==============================================================
  */
-webui.CommitView = function(historyView) {
+webui.CommitView = function (historyView) {
 
     var self = this;
 
-    self.update = function(entry) {
+    self.update = function (entry) {
         if (currentCommit == entry.commit) {
             // We already display the right data. No need to update.
             return;
@@ -1361,16 +1391,16 @@ webui.CommitView = function(historyView) {
         currentCommit = entry.commit;
         self.showDiff();
         buttonBox.select(0);
-        diffView.update([ "show" ], [entry.commit]);
+        diffView.update(["show"], [entry.commit]);
         treeView.update(entry.tree);
     };
 
-    self.showDiff = function() {
+    self.showDiff = function () {
         webui.detachChildren(commitViewContent);
         commitViewContent.appendChild(diffView.element);
     };
 
-    self.showTree = function() {
+    self.showTree = function () {
         webui.detachChildren(commitViewContent);
         commitViewContent.appendChild(treeView.element);
     };
@@ -1391,15 +1421,15 @@ webui.CommitView = function(historyView) {
 /*
  * == HistoryView =============================================================
  */
-webui.HistoryView = function(mainView) {
+webui.HistoryView = function (mainView) {
 
     var self = this;
 
-    self.show = function() {
+    self.show = function () {
         mainView.switchTo(self.element);
     };
 
-    self.update = function(ref) {
+    self.update = function (ref) {
         self.show();
         self.logView.update(ref);
     };
@@ -1415,15 +1445,15 @@ webui.HistoryView = function(mainView) {
 /*
  * == WorkspaceView ===========================================================
  */
-webui.WorkspaceView = function(mainView) {
+webui.WorkspaceView = function (mainView) {
 
     var self = this;
 
-    self.show = function() {
+    self.show = function () {
         mainView.switchTo(self.element);
     };
 
-    self.update = function(mode) {
+    self.update = function (mode) {
         self.show();
         self.workingCopyView.update();
         self.stagingAreaView.update();
@@ -1434,9 +1464,9 @@ webui.WorkspaceView = function(mainView) {
     };
 
     self.element = jQuery('<div id="workspace-view">' +
-                          '<div id="workspace-diff-view"></div>' +
-                          '<div id="workspace-editor"></div>' +
-                          '</div>')[0];
+        '<div id="workspace-diff-view"></div>' +
+        '<div id="workspace-editor"></div>' +
+        '</div>')[0];
     var workspaceDiffView = jQuery("#workspace-diff-view", self.element)[0];
     self.diffView = new webui.DiffView(true, true, self);
     workspaceDiffView.appendChild(self.diffView.element);
@@ -1452,23 +1482,23 @@ webui.WorkspaceView = function(mainView) {
 /*
  * == FilesView ===========================================================
  */
-webui.FilesView = function(mainView) {
+webui.FilesView = function (mainView) {
 
     var self = this;
 
-    self.show = function() {
+    self.show = function () {
         mainView.switchTo(self.element);
     };
 
-    self.update = function() {
+    self.update = function () {
         self.show();
         self.treeView.update();
         // self.commitMessageView.update();
     };
 
     self.element = jQuery('<div id="workspace-view">' +
-                          '<div id="workspace-editor"></div>' +
-                          '</div>')[0];
+        '<div id="workspace-editor"></div>' +
+        '</div>')[0];
     var workspaceEditor = jQuery("#workspace-editor", self.element)[0];
     self.treeView = new webui.TreeView(self);
     workspaceEditor.appendChild(self.treeView.element);
@@ -1479,16 +1509,16 @@ webui.FilesView = function(mainView) {
 /*
  * == ChangedFilesView ========================================================
  */
-webui.ChangedFilesView = function(workspaceView, type, label) {
+webui.ChangedFilesView = function (workspaceView, type, label) {
 
     var self = this;
 
-    self.update = function() {
+    self.update = function () {
         jQuery(fileList).empty()
         var col = type == "working-copy" ? 1 : 0;
-        webui.git([ "status", "--porcelain" ], function(data) {
+        webui.git(["status", "--porcelain"], function (data) {
             self.filesCount = 0;
-            webui.splitLines(data).forEach(function(line) {
+            webui.splitLines(data).forEach(function (line) {
                 var status = line[col];
                 if (col == 0 && status != " " && status != "?" || col == 1 && status != " ") {
                     ++self.filesCount;
@@ -1521,7 +1551,7 @@ webui.ChangedFilesView = function(workspaceView, type, label) {
         });
     };
 
-    self.select = function(event) {
+    self.select = function (event) {
         var clicked = event.target;
 
         if (event.shiftKey && selectedIndex !== null) {
@@ -1555,22 +1585,22 @@ webui.ChangedFilesView = function(workspaceView, type, label) {
         self.refreshDiff(clicked);
     };
 
-    self.refreshDiff = function(element) {
-        var cmd = [ "diff" ];
+    self.refreshDiff = function (element) {
+        var cmd = ["diff"];
         if (type == "staging-area") {
             cmd.push("--cached");
         }
-        workspaceView.diffView.update(cmd, undefined, [ element.model ] , type == "working-copy" ? "stage" : "unstage");
+        workspaceView.diffView.update(cmd, undefined, [element.model], type == "working-copy" ? "stage" : "unstage");
     };
 
-    self.unselect = function() {
+    self.unselect = function () {
         if (selectedIndex !== null) {
             jQuery(fileList.children[selectedIndex]).removeClass("active");
             selectedIndex = null;
         }
     };
 
-    self.getFileList = function(including, excluding) {
+    self.getFileList = function (including, excluding) {
         var files = [];
         for (var i = 0; i < fileList.childElementCount; ++i) {
             var child = fileList.children[i];
@@ -1583,17 +1613,17 @@ webui.ChangedFilesView = function(workspaceView, type, label) {
         return files;
     }
 
-    self.process = function() {
+    self.process = function () {
         prevScrollTop = fileListContainer.scrollTop;
         var files = self.getFileList(undefined, "D");
         var rmFiles = self.getFileList("D");
         if (files.length != 0) {
             var cmd = type == "working-copy" ? ["add"] : ["reset"];
             cmd.push('--');
-            webui.git(cmd.concat(files), function(data) {
+            webui.git(cmd.concat(files), function (data) {
                 if (rmFiles.length != 0) {
-                    var cmd = [ 'rm', '--'];
-                    webui.git(cmd.concat(rmFiles), function(data) {
+                    var cmd = ['rm', '--'];
+                    webui.git(cmd.concat(rmFiles), function (data) {
                         workspaceView.update(type == "working-copy" ? ["stage"] : ["unstage"]);
                     });
                 } else {
@@ -1603,40 +1633,40 @@ webui.ChangedFilesView = function(workspaceView, type, label) {
         } else if (rmFiles.length != 0) {
             var cmd = type == "working-copy" ? ["rm"] : ["reset"];
             cmd.push('--')
-            webui.git(cmd.concat(rmFiles), function(data) {
+            webui.git(cmd.concat(rmFiles), function (data) {
                 workspaceView.update(type == "working-copy" ? ["stage"] : ["unstage"]);
             });
         }
     };
 
-    self.cancel = function() {
+    self.cancel = function () {
         prevScrollTop = fileListContainer.scrollTop;
         var files = self.getFileList();
         if (files.length != 0) {
             var cmd = 'checkout'
-            webui.git(cmd.concat(files), function(data) {
+            webui.git(cmd.concat(files), function (data) {
                 workspaceView.update(["stage"]);
             });
         }
     }
 
-    self.getSelectedItemsCount = function() {
+    self.getSelectedItemsCount = function () {
         return jQuery(".active", fileList).length;
     }
 
-    self.element = jQuery(   '<div id="' + type + '-view" class="panel panel-default">' +
-                            '<div class="panel-heading">' +
-                                '<h5>'+ label + '</h5>' +
-                                '<div class="btn-group btn-group-sm"></div>' +
-                            '</div>' +
-                            '<div class="file-list-container">' +
-                                '<div class="list-group"></div>' +
-                            '</div>' +
-                        '</div>')[0];
+    self.element = jQuery('<div id="' + type + '-view" class="panel panel-default">' +
+        '<div class="panel-heading">' +
+        '<h5>' + label + '</h5>' +
+        '<div class="btn-group btn-group-sm"></div>' +
+        '</div>' +
+        '<div class="file-list-container">' +
+        '<div class="list-group"></div>' +
+        '</div>' +
+        '</div>')[0];
     if (type == "working-copy") {
-        var buttons = [{ name: "Stage", callback: self.process }, { name: "Cancel", callback: self.cancel }];
+        var buttons = [{name: "Stage", callback: self.process}, {name: "Cancel", callback: self.cancel}];
     } else {
-        var buttons = [{ name: "Unstage", callback: self.process }];
+        var buttons = [{name: "Unstage", callback: self.process}];
     }
     var btnGroup = jQuery(".btn-group", self.element);
     buttons.forEach(function (btnData) {
@@ -1655,31 +1685,31 @@ webui.ChangedFilesView = function(workspaceView, type, label) {
 /*
  * == CommitMessageView =======================================================
  */
-webui.CommitMessageView = function(workspaceView) {
+webui.CommitMessageView = function (workspaceView) {
 
     var self = this;
 
-    self.onAmend = function() {
+    self.onAmend = function () {
         if (!amend.hasClass("active") && textArea.value.length == 0) {
-            webui.git([ "log", "--pretty=format:%B", "-n", "1" ], function(data) {
+            webui.git(["log", "--pretty=format:%B", "-n", "1"], function (data) {
                 textArea.value = data;
             });
         }
     };
 
-    self.onCommit = function() {
+    self.onCommit = function () {
         if (workspaceView.stagingAreaView.filesCount == 0 && !amend.hasClass("active")) {
             webui.showError("No files staged for commit");
         } else if (textArea.value.length == 0) {
             webui.showError("Enter a commit message first");
         } else {
-            var cmd = [ "commit" ];
+            var cmd = ["commit"];
             if (amend.hasClass("active")) {
                 cmd.push("--amend");
             }
             cmd.push("-m");
             cmd.push(textArea.value)
-            webui.git(cmd, function(data) {
+            webui.git(cmd, function (data) {
                 textArea.value = "";
                 workspaceView.update(["stage"]);
                 amend.removeClass("active");
@@ -1687,19 +1717,19 @@ webui.CommitMessageView = function(workspaceView) {
         }
     }
 
-    self.update = function() {
+    self.update = function () {
     }
 
-    self.element = jQuery(   '<div id="commit-message-view" class="panel panel-default">' +
-                            '<div class="panel-heading">' +
-                                '<h5>Message</h5>' +
-                                '<div class="btn-group btn-group-sm">' +
-                                    '<button type="button" class="btn btn-default commit-message-amend" data-toggle="button">Amend</button>' +
-                                    '<button type="button" class="btn btn-default commit-message-commit">Commit</button>' +
-                                '</div>' +
-                            '</div>' +
-                            '<textarea></textarea>' +
-                        '</div>')[0];
+    self.element = jQuery('<div id="commit-message-view" class="panel panel-default">' +
+        '<div class="panel-heading">' +
+        '<h5>Message</h5>' +
+        '<div class="btn-group btn-group-sm">' +
+        '<button type="button" class="btn btn-default commit-message-amend" data-toggle="button">Amend</button>' +
+        '<button type="button" class="btn btn-default commit-message-commit">Commit</button>' +
+        '</div>' +
+        '</div>' +
+        '<textarea></textarea>' +
+        '</div>')[0];
     var textArea = jQuery("textarea", self.element)[0];
     var amend = jQuery(".commit-message-amend", self.element);
     amend.click(self.onAmend);
@@ -1712,7 +1742,7 @@ webui.CommitMessageView = function(workspaceView) {
 function MainUi() {
     var self = this;
 
-    self.switchTo = function(element) {
+    self.switchTo = function (element) {
         webui.detachChildren(self.mainView);
         self.mainView.appendChild(element);
     }
